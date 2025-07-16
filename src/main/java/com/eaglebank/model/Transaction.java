@@ -11,75 +11,30 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private BigDecimal amount;
-
     @Enumerated(EnumType.STRING)
     private TransactionType type;
 
+    private BigDecimal amount;
+
     private LocalDateTime timestamp;
 
-    @ManyToOne
-    @JoinColumn(name = "bank_account_id")
-    private BankAccount bankAccount;
-
-    public Transaction(Long id, BigDecimal amount, LocalDateTime timestamp, TransactionType type, BankAccount account) {
-        this.id = id;
-        this.amount = amount;
-        this.timestamp = timestamp;
-        this.type = type;
-        this.bankAccount = account;
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "account_number", nullable = false)
+    private BankAccount account;
 
     // Getters and Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
+    public TransactionType getType() { return type; }
+    public void setType(TransactionType type) { this.type = type; }
 
-    public Long getId()
-    {
-        return id;
-    }
+    public BigDecimal getAmount() { return amount; }
+    public void setAmount(BigDecimal amount) { this.amount = amount; }
 
-    public void setId(Long id)
-    {
-        this.id = id;
-    }
+    public LocalDateTime getTimestamp() { return timestamp; }
+    public void setTimestamp(LocalDateTime timestamp) { this.timestamp = timestamp; }
 
-    public BigDecimal getAmount()
-    {
-        return amount;
-    }
-
-    public void setAmount(BigDecimal amount)
-    {
-        this.amount = amount;
-    }
-
-    public TransactionType getType()
-    {
-        return type;
-    }
-
-    public void setType(TransactionType type)
-    {
-        this.type = type;
-    }
-
-    public LocalDateTime getTimestamp()
-    {
-        return timestamp;
-    }
-
-    public void setTimestamp(LocalDateTime timestamp)
-    {
-        this.timestamp = timestamp;
-    }
-
-    public BankAccount getBankAccount()
-    {
-        return bankAccount;
-    }
-
-    public void setBankAccount(BankAccount bankAccount)
-    {
-        this.bankAccount = bankAccount;
-    }
+    public BankAccount getBankAccount() { return account; }
+    public void setBankAccount(BankAccount account) { this.account = account; }
 }

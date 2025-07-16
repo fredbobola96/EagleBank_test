@@ -1,40 +1,45 @@
 package com.eaglebank.controller;
 
-import com.eaglebank.model.BankAccount;
+import com.eaglebank.dto.*;
 import com.eaglebank.service.BankAccountService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/accounts")
+@RequestMapping("/v1/accounts")
 public class BankAccountController {
-    @Autowired
-    private BankAccountService accountService;
 
-    @PostMapping("/client/{clientId}")
-    public BankAccount createAccount(@PathVariable Long clientId, @RequestBody BankAccount account) {
-        return accountService.createBankAccount(clientId, account);
+    private final BankAccountService bankAccountService;
+
+    public BankAccountController(BankAccountService bankAccountService) {
+        this.bankAccountService = bankAccountService;
     }
 
-    @GetMapping("/client/{clientId}")
-    public List<BankAccount> getAccountsByClient(@PathVariable Long clientId) {
-        return accountService.getBankAccountsByClientId(clientId);
+    @PostMapping
+    public ResponseEntity<BankAccountResponse> createAccount(@RequestBody CreateBankAccountRequest request) {
+        return ResponseEntity.status(201).body(bankAccountService.createAccount(request));
     }
 
-    @GetMapping("/{id}")
-    public BankAccount getAccountById(@PathVariable Long id) {
-        return accountService.getBankAccountById(id).orElse(null);
+    @GetMapping
+    public ResponseEntity<List<BankAccountResponse>> listAccounts() {
+        return ResponseEntity.ok(bankAccountService.listAccounts());
     }
 
-    @PutMapping("/{id}")
-    public BankAccount updateAccount(@PathVariable Long id, @RequestBody BankAccount account) {
-        return accountService.updateBankAccount(id, account);
+    @GetMapping("/{accountNumber}")
+    public ResponseEntity<BankAccountResponse> getAccount(@PathVariable Long accountNumber) {
+        return ResponseEntity.ok(bankAccountService.getAccount(accountNumber));
     }
 
-    @DeleteMapping("/{id}")
-    public void deleteAccount(@PathVariable Long id) {
-        accountService.deleteBankAccount(id);
+    @PatchMapping("/{accountNumber}")
+    public ResponseEntity<BankAccountResponse> updateAccount(@PathVariable Long accountNumber, @RequestBody UpdateBankAccountRequest request) {
+        return ResponseEntity.ok(bankAccountService.updateBankAccount(accountNumber, request));
+    }
+
+    @DeleteMapping("/{accountNumber}")
+    public ResponseEntity<Void> deleteAccount(@PathVariable Long accountNumber) {
+        bankAccountService.deleteAccount(accountNumber);
+        return ResponseEntity.noContent().build();
     }
 }
