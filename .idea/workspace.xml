@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="49026657-0fb0-42e9-93c3-21e1742343f0" name="Changes" comment="minor">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/controller/TransactionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/TransactionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/controller/BankAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/controller/BankAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/controller/ClientController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/model/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/model/BankAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/model/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/model/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/model/TransactionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/model/TransactionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/repository/TransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/repository/TransactionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/BankAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/BankAccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="EagleBank" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="aa762b95-e9ce-4b8e-982f-4f7b2d7f98cb" />
+        <option name="url" value="https://github.com/fredbobola96/EagleBank_test" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="RunManager">
+    <configuration name="EagleBankApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.eaglebank.EagleBankApplication" />
+      <module name="EagleBank.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eaglebank.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.EagleBankApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+</project>
