@@ -1,8 +1,8 @@
 package com.eaglebank.service.impl;
 
-import com.eaglebank.dto.BankAccountResponse;
-import com.eaglebank.dto.CreateBankAccountRequest;
-import com.eaglebank.dto.UpdateBankAccountRequest;
+import com.eaglebank.pojo.BankAccountResponse;
+import com.eaglebank.pojo.CreateBankAccountRequest;
+import com.eaglebank.pojo.UpdateBankAccountRequest;
 import com.eaglebank.model.BankAccount;
 import com.eaglebank.model.Client;
 import com.eaglebank.repository.BankAccountRepository;

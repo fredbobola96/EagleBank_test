@@ -1,8 +1,8 @@
 package com.eaglebank.controller;
 
-import com.eaglebank.dto.CreateClientRequest;
-import com.eaglebank.dto.UpdateClientRequest;
-import com.eaglebank.dto.ClientResponse;
+import com.eaglebank.pojo.CreateClientRequest;
+import com.eaglebank.pojo.UpdateClientRequest;
+import com.eaglebank.pojo.ClientResponse;
 import com.eaglebank.service.ClientService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

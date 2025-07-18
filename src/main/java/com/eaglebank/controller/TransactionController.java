@@ -1,7 +1,7 @@
 package com.eaglebank.controller;
 
-import com.eaglebank.dto.CreateTransactionRequest;
-import com.eaglebank.dto.TransactionResponse;
+import com.eaglebank.pojo.CreateTransactionRequest;
+import com.eaglebank.pojo.TransactionResponse;
 import com.eaglebank.service.TransactionService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

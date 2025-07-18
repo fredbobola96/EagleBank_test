@@ -1,7 +1,7 @@
 package com.eaglebank.service;
 
-import com.eaglebank.dto.CreateTransactionRequest;
-import com.eaglebank.dto.TransactionResponse;
+import com.eaglebank.pojo.CreateTransactionRequest;
+import com.eaglebank.pojo.TransactionResponse;
 
 import java.util.List;
 

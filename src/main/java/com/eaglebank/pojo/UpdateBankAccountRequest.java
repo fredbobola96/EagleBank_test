@@ -1,4 +1,4 @@
-package com.eaglebank.dto;
+package com.eaglebank.pojo;
 
 public class UpdateBankAccountRequest {
     private String type;

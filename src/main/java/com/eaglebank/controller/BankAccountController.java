@@ -1,6 +1,6 @@
 package com.eaglebank.controller;
 
-import com.eaglebank.dto.*;
+import com.eaglebank.pojo.*;
 import com.eaglebank.service.BankAccountService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

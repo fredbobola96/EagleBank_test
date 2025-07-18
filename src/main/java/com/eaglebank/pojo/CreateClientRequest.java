@@ -1,20 +1,15 @@
-package com.eaglebank.dto;
+package com.eaglebank.pojo;
 
-public class ClientResponse {
-    private Long id;
+public class CreateClientRequest {
     private String name;
     private String email;
 
-    public ClientResponse() {}
+    public CreateClientRequest() {}
 
-    public ClientResponse(Long id, String name, String email) {
-        this.id = id;
+    public CreateClientRequest(String name, String email) {
         this.name = name;
         this.email = email;
     }
-
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }

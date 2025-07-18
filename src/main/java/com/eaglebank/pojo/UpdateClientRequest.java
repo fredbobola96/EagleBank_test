@@ -1,4 +1,4 @@
-package com.eaglebank.dto;
+package com.eaglebank.pojo;
 
 public class UpdateClientRequest {
     private String name;

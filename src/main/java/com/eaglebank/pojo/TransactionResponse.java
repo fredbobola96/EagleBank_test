@@ -1,4 +1,4 @@
-package com.eaglebank.dto;
+package com.eaglebank.pojo;
 
 import com.eaglebank.model.TransactionType;
 import java.math.BigDecimal;

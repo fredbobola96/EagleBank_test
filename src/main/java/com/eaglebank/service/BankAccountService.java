@@ -1,6 +1,6 @@
 package com.eaglebank.service;
 
-import com.eaglebank.dto.*;
+import com.eaglebank.pojo.*;
 
 import java.util.List;
 

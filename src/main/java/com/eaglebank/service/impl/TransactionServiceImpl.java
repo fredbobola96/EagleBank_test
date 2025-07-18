@@ -1,7 +1,7 @@
 package com.eaglebank.service.impl;
 
-import com.eaglebank.dto.CreateTransactionRequest;
-import com.eaglebank.dto.TransactionResponse;
+import com.eaglebank.pojo.CreateTransactionRequest;
+import com.eaglebank.pojo.TransactionResponse;
 import com.eaglebank.model.BankAccount;
 import com.eaglebank.model.Transaction;
 import com.eaglebank.model.TransactionType;
