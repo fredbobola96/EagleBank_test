@@ -15,13 +15,6 @@ public interface TransactionService {
      * @return the created transaction response
      */
     TransactionResponse createTransaction(Long accountNumber, CreateTransactionRequest request);
-
-    /**
-     * Retrieves all transactions for a specific bank account.
-     *
-     * @param accountNumber the account number
-     * @return list of transaction responses
-     */
     List<TransactionResponse> getTransactions(Long accountNumber);
 
     /**
