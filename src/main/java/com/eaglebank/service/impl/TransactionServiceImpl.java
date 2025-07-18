@@ -71,11 +71,11 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     private TransactionResponse map(Transaction tx) {
-        TransactionResponse res = new TransactionResponse();
-        res.setId(tx.getId().toString());
-        res.setType(tx.getType());
-        res.setAmount(tx.getAmount());
-        res.setTimestamp(tx.getTimestamp());
-        return res;
+        return new TransactionResponse(
+                tx.getId().toString(),
+                tx.getType(),
+                tx.getAmount(),
+                tx.getTimestamp()
+        );
     }
 }
