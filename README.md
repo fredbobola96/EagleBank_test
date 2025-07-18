@@ -1,4 +1,4 @@
-# 🦅 Eagle Bank API
+#  Eagle Bank API
 
 A banking REST API that allows users to register, manage bank accounts, and perform deposit or withdrawal transactions. 
 Built with Spring Boot, Java 17, H2 Database, and Gradle 8.
