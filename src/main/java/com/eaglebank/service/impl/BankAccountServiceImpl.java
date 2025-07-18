@@ -1,18 +1,21 @@
 package com.eaglebank.service.impl;
 
-import com.eaglebank.dto.*;
-import com.eaglebank.model.*;
-import com.eaglebank.repository.*;
+import com.eaglebank.dto.BankAccountResponse;
+import com.eaglebank.dto.CreateBankAccountRequest;
+import com.eaglebank.dto.UpdateBankAccountRequest;
+import com.eaglebank.model.BankAccount;
+import com.eaglebank.model.Client;
+import com.eaglebank.repository.BankAccountRepository;
+import com.eaglebank.repository.ClientRepository;
 import com.eaglebank.service.BankAccountService;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
-public class BankAccountServiceImpl implements BankAccountService
-{
+public class BankAccountServiceImpl implements BankAccountService {
 
     private final BankAccountRepository accountRepo;
     private final ClientRepository clientRepo;
@@ -21,44 +24,59 @@ public class BankAccountServiceImpl implements BankAccountService
         this.accountRepo = accountRepo;
         this.clientRepo = clientRepo;
     }
-
     @Override
-    public BankAccountResponse createAccount(CreateBankAccountRequest request) {
-        Client client = clientRepo.findById(request.clientId).orElseThrow();
-        BankAccount acc = new BankAccount();
-        acc.setType(request.type);
-        acc.setClient(client);
-        accountRepo.save(acc);
-        return map(acc);
+    public BankAccountResponse createAccount(CreateBankAccountRequest request)
+    {
+        Client client = clientRepo.findById(request.getClientId())
+                .orElseThrow(() -> new IllegalArgumentException("Client not found"));
+
+        BankAccount account = new BankAccount();
+        account.setType(request.getType());
+        account.setBalance(BigDecimal.ZERO);
+        account.setClient(client);
+
+        accountRepo.save(account);
+        return map(account);
     }
 
     @Override
-    public List<BankAccountResponse> listAccounts() {
-        return accountRepo.findAll().stream().map(this::map).collect(Collectors.toList());
+    public List<BankAccountResponse> listAccounts()
+    {
+        return accountRepo.findAll().stream()
+                .map(this::map)
+                .collect(Collectors.toList());
     }
 
     @Override
-    public BankAccountResponse getAccount(Long accountNumber) {
-        return map(accountRepo.findById(accountNumber).orElseThrow());
+    public BankAccountResponse getAccount(Long accountId) {
+        BankAccount account = accountRepo.findById(accountId)
+                .orElseThrow(() -> new IllegalArgumentException("Account not found"));
+        return map(account);
     }
 
     @Override
-    public BankAccountResponse updateBankAccount(Long accountNumber, UpdateBankAccountRequest request) {
-        BankAccount acc = accountRepo.findById(accountNumber).orElseThrow();
-        acc.setType(request.type);
-        return map(accountRepo.save(acc));
+    public BankAccountResponse updateBankAccount(Long accountId, UpdateBankAccountRequest request)
+    {
+        BankAccount account = accountRepo.findById(accountId)
+                .orElseThrow(() -> new IllegalArgumentException("Account not found"));
+        account.setType(request.getType());
+        accountRepo.save(account);
+        return map(account);
     }
 
     @Override
-    public void deleteAccount(Long accountNumber) {
-        accountRepo.deleteById(accountNumber);
+    public void deleteAccount(Long accountId) {
+        if (!accountRepo.existsById(accountId)) {
+            throw new IllegalArgumentException("Account not found");
+        }
+        accountRepo.deleteById(accountId);
     }
 
-    private BankAccountResponse map(BankAccount acc) {
-        BankAccountResponse res = new BankAccountResponse();
-        res.accountNumber = acc.getAccountNumber();
-        res.type = acc.getType();
-        res.clientId = acc.getClient().getId();
-        return res;
+    private BankAccountResponse map(BankAccount account) {
+        return new BankAccountResponse(
+                account.getAccountNumber(),
+                account.getType(),
+                account.getBalance()
+        );
     }
 }

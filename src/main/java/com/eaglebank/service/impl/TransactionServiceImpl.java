@@ -1,8 +1,12 @@
 package com.eaglebank.service.impl;
 
-import com.eaglebank.dto.*;
-import com.eaglebank.model.*;
-import com.eaglebank.repository.*;
+import com.eaglebank.dto.CreateTransactionRequest;
+import com.eaglebank.dto.TransactionResponse;
+import com.eaglebank.model.BankAccount;
+import com.eaglebank.model.Transaction;
+import com.eaglebank.model.TransactionType;
+import com.eaglebank.repository.BankAccountRepository;
+import com.eaglebank.repository.TransactionRepository;
 import com.eaglebank.service.TransactionService;
 import org.springframework.stereotype.Service;
 
@@ -27,49 +31,51 @@ public class TransactionServiceImpl implements TransactionService {
         BankAccount account = accountRepo.findById(accountNumber)
                 .orElseThrow(() -> new IllegalArgumentException("Bank account not found"));
 
-        if (request.type == TransactionType.WITHDRAW) {
-            if (account.getBalance().compareTo(request.amount) < 0) {
+        if (request.getType() == TransactionType.WITHDRAW) {
+            if (account.getBalance().compareTo(request.getAmount()) < 0) {
                 throw new IllegalArgumentException("Insufficient funds");
             }
-            account.setBalance(account.getBalance().subtract(request.amount));
-        } else if (request.type == TransactionType.DEPOSIT) {
-            account.setBalance(account.getBalance().add(request.amount));
+            account.setBalance(account.getBalance().subtract(request.getAmount()));
+        } else if (request.getType() == TransactionType.DEPOSIT) {
+            account.setBalance(account.getBalance().add(request.getAmount()));
         } else {
             throw new IllegalArgumentException("Invalid transaction type");
         }
 
+        // Save updated balance
         accountRepo.save(account);
 
+        // Create and persist transaction
         Transaction tx = new Transaction();
-        tx.setType(request.type);
-        tx.setAmount(request.amount);
+        tx.setType(request.getType());
+        tx.setAmount(request.getAmount());
         tx.setTimestamp(LocalDateTime.now());
-        tx.setBankAccount(account);
+        tx.setBankAccount(account); // ✅ This must be a valid, persisted account
 
         txRepo.save(tx);
         return map(tx);
     }
 
     @Override
-    public List<TransactionResponse> getTransactions(Long accountNumber)
-    {
+    public List<TransactionResponse> getTransactions(Long accountNumber) {
         return txRepo.findByAccount_AccountNumber(accountNumber).stream()
                 .map(this::map)
                 .collect(Collectors.toList());
     }
 
     @Override
-    public TransactionResponse getTransaction(Long accountNumber, Long transactionId)
-    {
-        return map(txRepo.findById(transactionId).orElseThrow());
+    public TransactionResponse getTransaction(Long accountNumber, Long transactionId) {
+        Transaction tx = txRepo.findById(transactionId)
+                .orElseThrow(() -> new IllegalArgumentException("Transaction not found"));
+        return map(tx);
     }
 
     private TransactionResponse map(Transaction tx) {
         TransactionResponse res = new TransactionResponse();
-        res.id = tx.getId();
-        res.type = tx.getType();
-        res.amount = tx.getAmount();
-        res.timestamp = tx.getTimestamp();
+        res.setId(tx.getId().toString());
+        res.setType(tx.getType());
+        res.setAmount(tx.getAmount());
+        res.setTimestamp(tx.getTimestamp());
         return res;
     }
 }

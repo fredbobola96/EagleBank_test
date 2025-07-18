@@ -8,7 +8,8 @@ import java.util.List;
 public class BankAccount {
 
     @Id
-    private Long accountNumber;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long accountNumber; // Primary key
 
     private String type;
 
@@ -22,18 +23,44 @@ public class BankAccount {
     private List<Transaction> transactions;
 
     // Getters and Setters
-    public Long getAccountNumber() { return accountNumber; }
-    public void setAccountNumber(Long accountNumber) { this.accountNumber = accountNumber; }
 
-    public String getType() { return type; }
-    public void setType(String type) { this.type = type; }
+    public Long getAccountNumber() {
+        return accountNumber;
+    }
 
-    public BigDecimal getBalance() { return balance; }
-    public void setBalance(BigDecimal balance) { this.balance = balance; }
+    public void setAccountNumber(Long accountNumber) {
+        this.accountNumber = accountNumber;
+    }
 
-    public Client getClient() { return client; }
-    public void setClient(Client client) { this.client = client; }
+    public String getType() {
+        return type;
+    }
 
-    public List<Transaction> getTransactions() { return transactions; }
-    public void setTransactions(List<Transaction> transactions) { this.transactions = transactions; }
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
+    }
 }

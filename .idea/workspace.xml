@@ -4,20 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49026657-0fb0-42e9-93c3-21e1742343f0" name="Changes" comment="minor">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/controller/TransactionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/TransactionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/controller/BankAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/controller/BankAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/controller/ClientController.java" beforeDir="false" />
+    <list default="true" id="49026657-0fb0-42e9-93c3-21e1742343f0" name="Changes" comment="Structure rearrange, introduction of implementation classes">
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/controller/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/dto/BankAccountResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/dto/BankAccountResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/dto/ClientResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/dto/ClientResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/dto/CreateBankAccountRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/dto/CreateBankAccountRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/dto/CreateClientRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/dto/CreateClientRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/dto/CreateTransactionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/dto/CreateTransactionRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/dto/TransactionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/dto/TransactionResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/dto/UpdateBankAccountRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/dto/UpdateBankAccountRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/dto/UpdateClientRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/dto/UpdateClientRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/model/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/model/BankAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/model/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/model/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/model/TransactionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/model/TransactionType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/repository/TransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/repository/TransactionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/BankAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/BankAccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/TransactionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/impl/BankAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/impl/BankAccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/impl/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/impl/ClientServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/impl/TransactionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eaglebank/service/impl/TransactionServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,11 +56,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -64,7 +69,18 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="ProjectId" id="302dtpcDQs0rlhfg3IhXJP7m3U1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="EagleBankApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.eaglebank.EagleBankApplication" />
@@ -85,7 +101,15 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="49026657-0fb0-42e9-93c3-21e1742343f0" name="Changes" comment="Structure rearrange, introduction of implementation classes" />
+      <created>1752829825688</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1752829825688</updated>
+    </task>
     <servers />
   </component>
 </project>
