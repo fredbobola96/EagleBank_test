@@ -4,8 +4,7 @@ import com.eaglebank.dto.*;
 
 import java.util.List;
 
-public interface ClientService
-{
+public interface ClientService {
     ClientResponse createClient(CreateClientRequest request);
     ClientResponse getClientById(Long id);
 

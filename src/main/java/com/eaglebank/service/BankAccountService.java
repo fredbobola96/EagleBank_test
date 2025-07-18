@@ -4,8 +4,7 @@ import com.eaglebank.dto.*;
 
 import java.util.List;
 
-public interface BankAccountService
-{
+public interface BankAccountService {
     BankAccountResponse createAccount(CreateBankAccountRequest request);
     List<BankAccountResponse> listAccounts();
     BankAccountResponse getAccount(Long accountNumber);

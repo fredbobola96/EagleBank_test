@@ -6,7 +6,6 @@ import java.util.List;
 
 @Entity
 public class BankAccount {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long accountNumber; // Primary key

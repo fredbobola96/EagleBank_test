@@ -4,9 +4,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class Client
-{
-
+public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
